@@ -1,0 +1,11 @@
+java-tester.iml
+.idea
+ui/target
+ui/node
+ui/node_modules
+ui/package-lock.json
+ui/ui.iml
+ui/etc
+core/target
+/core/src/main/resources/static
+/core/src/main/resources/templates
