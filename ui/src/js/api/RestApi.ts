@@ -1,12 +1,12 @@
 import Axios, {AxiosRequestConfig, AxiosResponse, Method} from "../../../node_modules/axios/index";
-import HttpMethod from "../enums/HttpMethod";
+import HttpMethod from "./common/HttpMethod";
 import Request from "./common/Request";
 import UserDto from "../dto/UserDto";
 
 export default class RestApi {
     private static readonly apiUrl = "/api";
 
-    private static call(methodUrl: string, method: HttpMethod, data?: Request): Promise<any> {
+    protected static call(methodUrl: string, method: HttpMethod, data?: Request): Promise<any> {
         const targetUrl = window.location.origin.concat(RestApi.apiUrl).concat(methodUrl);
         const config: AxiosRequestConfig = !data ? {
             url: targetUrl,
