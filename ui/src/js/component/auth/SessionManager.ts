@@ -4,13 +4,18 @@ import UserDto from "../../dto/UserDto";
 import HttpStatus from "../../api/common/HttpStatus";
 import Notify from "../../util/Notify";
 
-export default class SessionManager {
+class SessionManager {
     private user: UserDto;
-    private isAuthorized: boolean;
+    public isAuthorized: boolean;
 
 
-    constructor(isAuthorized: boolean) {
-        this.isAuthorized = isAuthorized;
+    constructor() {
+        this.isAuthorized = false;
+        this.user = new class implements UserDto {
+            id: number = 1;
+            name: string = "admin";
+            role: string = "admin";
+        }
     }
 
     public logout(): void {
@@ -19,3 +24,5 @@ export default class SessionManager {
             .catch(it => Notify.error('SUCCESS'))
     }
 }
+
+export default SessionManager;

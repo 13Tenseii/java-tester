@@ -9,7 +9,6 @@ import SessionManager from "../component/auth/SessionManager";
 @Template(function (this: MainView) {
     return (
         <div className="Main-view" id={this.getBlockName()}>
-            <Header/>
         </div>
     )
 })

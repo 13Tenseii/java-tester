@@ -1,4 +1,58 @@
 .Header {
-  background $grey;
+  display flex;
+  position fixed;
+  justify-content center;
+  align-items center;
+  z-index 10;
+  width 100%;
+  height $headerHeight;
+  color white;
   background linear-gradient(90deg, rgba(86,86,86,1) 0%, rgba(61,61,61,1) 100%);
+  box-shadow 0 0 10px rgba(0,0,0,1);
+
+  &__logo {
+    content url("../assets/logo.png");
+    height: 5rem;
+    align-self: center;
+    cursor: pointer;
+    left: 4%;
+    position: absolute;
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 3%;
+  }
+
+  &__auth-icon {
+    cursor pointer;
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
+
+  &__btn {
+    font-size 1.25rem;
+    font-weight bold;
+    align-self center;
+    cursor: pointer;
+    padding 0.5rem;
+
+    &:hover {
+      border-bottom 2px solid white;
+    }
+  }
+
+  &__login {
+    @extend .Header__btn;
+  }
+
+  &__register {
+    @extend .Header__btn;
+  }
+
+  &__logout {
+    @extend .Header__btn;
+  }
 }
